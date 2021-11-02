@@ -7,6 +7,8 @@
 - lsyncd
 - GeoDNS
 - Linux
+- NodeJS
+- Apache
 
 ## How my CDN is configured
 
@@ -58,6 +60,16 @@ do
 end
 
 ```
+
+## Uploading Files to /var/www/html
+
+- I used NodeJS (ExpressJS, EJS + clipboardjs, and Multer) for this file uploading. 
+- Apache Port Proxy is also used to make it visible in virtualhost. 
+
+Check [Here](https://github.com/justiceserv/PersonalCDN/tree/main/UploadFile) for example files. 
+**You MUST have at least apache authentication to actually use it in internet.**
+
+Default uploading location : project/uploadedFiles -> Lsyncd to /var/www/html/cdn 
 
 ### Extra Information
 
