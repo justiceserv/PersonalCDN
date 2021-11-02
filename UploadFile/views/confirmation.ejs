@@ -1,0 +1,33 @@
+<h1>Success!</h1>
+
+<% if(file){ %>
+<pre><%=JSON.stringify(file, null, 2)%></pre>
+<% }%>
+
+<% if(files){ %>
+<pre><%=JSON.stringify(files, null, 2)%></pre>
+<% }%>
+
+<a href='/'>Back</a><br>
+
+<input type="button"  class="btn btn-primary" onclick="copyLink()" data-toggle="tooltip" title="Copy to Clipboard" value="copy link" readonly />
+
+<span id="copyText"><%= stringweb %></span>
+
+<script>
+  function copyLink() {
+    let copyText = document.getElementById("copyText") 
+
+    var selection = window.getSelection();
+
+    var range = document.createRange();
+
+    range.selectNodeContents(copyText);
+
+    selection.removeAllRanges();
+
+    selection.addRange(range);
+
+    document.execCommand('copy');
+  }
+</script>
